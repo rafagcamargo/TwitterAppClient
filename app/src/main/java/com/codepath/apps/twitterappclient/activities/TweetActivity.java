@@ -3,6 +3,8 @@ package com.codepath.apps.twitterappclient.activities;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -24,6 +26,8 @@ import com.squareup.picasso.Picasso;
 import org.apache.http.Header;
 
 public class TweetActivity extends AppCompatActivity {
+
+    private static int MAX_COUNT = 140;
 
     private TwitterClient twitterClient;
 
@@ -47,7 +51,26 @@ public class TweetActivity extends AppCompatActivity {
         ImageView ivUser = (ImageView) findViewById(R.id.ivUser);
         TextView tvName = (TextView) findViewById(R.id.tvName);
         TextView tvScreenName = (TextView) findViewById(R.id.tvScreenName);
+        final TextView tvCount = (TextView) findViewById(R.id.tvCount);
+
         etTweet = (EditText) findViewById(R.id.etTweet);
+        etTweet.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //no-op
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //no-op
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                int count = MAX_COUNT - s.length();
+                tvCount.setText(String.valueOf(count));
+            }
+        });
 
         User user = new Select().from(User.class).executeSingle();
 

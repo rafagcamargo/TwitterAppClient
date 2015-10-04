@@ -77,7 +77,7 @@ public class TimelineActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        populateTimeline(Tweet.greatestId, 0);
+        //populateTimeline(Tweet.greatestId, 0);
     }
 
     @Override
