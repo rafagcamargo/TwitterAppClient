@@ -42,7 +42,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://dl.dropboxusercontent.com/u/72672886/TwitterAppClient.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/rafagcamargo/TwitterAppClient/blob/master/TwitterAppClient.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
